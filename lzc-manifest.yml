@@ -1,0 +1,19 @@
+application:
+  subdomain: memos
+  upstreams:
+    - location: /
+      backend: http://memos:5230/
+  public_path:
+    - /
+
+services:
+  memos:
+    # upstream: neosmemo/memos:0.30
+    image: docker.1ms.run/neosmemo/memos:0.30
+    binds:
+      - /lzcapp/var/memos:/var/opt/memos
+    mem_limit: 1g
+
+usage: |
+  首次打开后请按页面引导创建管理员账号。
+  应用数据持久化保存在懒猫应用私有目录中。

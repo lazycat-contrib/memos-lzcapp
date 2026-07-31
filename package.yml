@@ -1,0 +1,20 @@
+package: community.lazycat.app.memos
+version: 0.30.0
+name: Memos
+description: "An open-source, self-hosted note-taking service focused on privacy and ease of use"
+min_os_version: 1.5.0
+author: usememos
+license: MIT
+homepage: https://github.com/usememos/memos
+
+locales:
+  zh:
+    name: "Memos"
+    description: "一款注重隐私与易用性的开源自托管笔记服务"
+  en:
+    name: "Memos"
+    description: "An open-source, self-hosted note-taking service focused on privacy and ease of use"
+
+permissions:
+  required:
+    - net.internet

@@ -1,0 +1,45 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/application.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: memos
+
+build:
+  toolchains: []
+  run_buildscript: false
+
+images:
+  - id: memos
+    target: service
+    service: memos
+    source: neosmemo/memos
+    channel: stable
+    tag_regex: '^[0-9]+\.[0-9]+$'
+    version_regex: '^(?P<version>[0-9]+\.[0-9]+)$'
+    version_template: '{version}.0'
+    delivery:
+      mode: mirror
+      image_template: docker.1ms.run/neosmemo/memos:{tag}
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+    skip_if_version_exists: false
+    retry:
+      enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Memos
+    summary: "Automatically published from GitHub Actions"
