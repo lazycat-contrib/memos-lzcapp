@@ -1,5 +1,5 @@
 package: community.lazycat.app.memos
-version: 0.31.0
+version: 26.10.0
 name: Memos
 description: "An open-source, self-hosted note-taking service focused on privacy and ease of use"
 min_os_version: 1.5.0
