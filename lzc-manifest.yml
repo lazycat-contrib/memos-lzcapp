@@ -7,8 +7,8 @@ application:
     - /
 services:
   memos:
-    # upstream: neosmemo/memos:26.10
-    image: docker.1ms.run/neosmemo/memos:26.10
+    # upstream: neosmemo/memos:26.11
+    image: docker.1ms.run/neosmemo/memos:26.11
     binds:
       - /lzcapp/var/memos:/var/opt/memos
     mem_limit: 1g
